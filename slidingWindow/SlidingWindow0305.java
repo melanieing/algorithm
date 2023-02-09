@@ -18,6 +18,7 @@ public class SlidingWindow0305 {
 
 //        System.out.println(solution1(n));
         System.out.println(solution2(n)); // 좀 더 효율적인 방법
+//        System.out.println(solution3(n)); // 수학적인 방법
     }
 
     public static int solution1(int n) {
@@ -45,7 +46,7 @@ public class SlidingWindow0305 {
         return answer;
     }
 
-    public static int solution2(int n){
+    public static int solution2(int n) {
         int answer = 0, sum = 0;
 
         int m = n / 2 + 1; // 연속된 자연수의 합이므로 그 이상까지 볼 필요는 없음***
@@ -65,6 +66,19 @@ public class SlidingWindow0305 {
                 if (sum == n) {
                     answer++;
                 }
+            }
+        }
+        return answer;
+    }
+
+    public static int solution3(int n) {
+        int answer = 0, cnt = 1; // cnt는 연속된 자연수의 갯수
+        n--; // n에서 1 빼놓기
+        while (n > 0) {
+            cnt++;
+            n = n - cnt; // n에서 2, 3, 4, ... 빼놓기
+            if (n % cnt == 0) { // 나누어 떨어지면
+                answer++;
             }
         }
         return answer;
