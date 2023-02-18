@@ -16,10 +16,11 @@ public class StackQueue0502 {
         Scanner sc = new Scanner(System.in);
         String s = sc.next();
 
-        System.out.println(solution(s));
+        System.out.println(solution1(s));
+//        System.out.println(solution2(s));
     }
 
-    public static String solution(String s) {
+    public static String solution1(String s) {
         Stack<Character> stack = new Stack<>();
 
         for (char c : s.toCharArray()) {
@@ -42,5 +43,22 @@ public class StackQueue0502 {
         }
 
         return sb.toString();
+    }
+
+    public static String solution2(String str){
+        String answer = "";
+        Stack<Character> stack = new Stack<>();
+
+        for (char x : str.toCharArray()) {
+            if (x == ')') {
+                while (stack.pop() != '('); // while문 내용을 안 써도 상관없음
+            } else {
+                stack.push(x);
+            }
+        }
+        for (int i = 0; i < stack.size(); i++) {
+            answer += stack.get(i); // 인덱스로도 스택 접근가능
+        }
+        return answer;
     }
 }
