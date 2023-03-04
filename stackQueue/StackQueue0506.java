@@ -3,7 +3,6 @@ package inflearnAlgorithm.stackQueue;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;
-import java.util.Stack;
 
 /**
  * 05-06. 공주 구하기
