@@ -55,7 +55,7 @@ public class StackQueue0507 {
                 }
             }
         }
-        if (!q.isEmpty()) { // 큐가 비지 않았다면 NO
+        if (!q.isEmpty()) { // 듣지 않은 필수과목이 있다면 NO
             return "NO";
         }
 
