@@ -1,5 +1,6 @@
 package inflearnAlgorithm.sorting;
 
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Scanner;
 
@@ -23,10 +24,11 @@ public class Sorting0605 {
             arr[i] = sc.nextInt();
         }
 
-        System.out.println(solution(n, arr));
+//        System.out.println(solution1(n, arr));
+        System.out.println(solution2(n, arr));
     }
 
-    public static char solution(int n, int[] arr) {
+    public static char solution1(int n, int[] arr) {
         char c = 'D';
 
         HashSet<Integer> set = new HashSet<>();
@@ -38,5 +40,18 @@ public class Sorting0605 {
         }
 
         return c;
+    }
+
+    public static String solution2(int n, int[] arr){
+        String answer = "U";
+        Arrays.sort(arr); // 정렬하기
+
+        for (int i = 0; i < n-1; i++) {
+            if (arr[i] == arr[i+1]) { // 양 옆을 비교해서 같다면 중복이므로
+                answer = "D"; // 바꾸고 바로 출력
+                break;
+            }
+        }
+        return answer;
     }
 }
