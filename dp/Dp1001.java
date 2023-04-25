@@ -13,7 +13,7 @@ import java.util.Scanner;
  */
 public class Dp1001 {
 
-    static int[] dy;
+    static int[] dy; // 방법의 수 배열
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -25,8 +25,8 @@ public class Dp1001 {
 
     public int solution(int n) {
 
-        dy[1] = 1; // 계단이 하나일 때
-        dy[2] = 2; // 계단이 둘일 때
+        dy[1] = 1; // 계단이 하나일 때 방법의 수
+        dy[2] = 2; // 계단이 둘일 때 방법의 수
 
         for (int i = 3; i <= n; i++) { // 계단이 셋 이상일 때
             dy[i] = dy[i-2] + dy[i-1];
