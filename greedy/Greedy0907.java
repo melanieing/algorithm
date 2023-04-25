@@ -66,9 +66,9 @@ public class Greedy0907 {
     }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt(); // 학생 수
-        int m = sc.nextInt(); // 숫자쌍의 개수
-        // 학생수+1만큼 생성
+        int n = sc.nextInt();
+        int m = sc.nextInt();
+
         unf = new int[n+1];
 
         ArrayList<Edge2> arr = new ArrayList<>();
